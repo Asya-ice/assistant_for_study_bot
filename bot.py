@@ -7,7 +7,7 @@ create_database()
 # обрабатываем команду /start
 @bot.message_handler(commands=['start'])
 def start_func(message):
-    bot.send_message(message.from_user.id, "Привет! Если ты хочешь выучить новые слова на английском или\t"
+    bot.send_message(message.from_user.id, "Привет! Если ты хочешь выучить новые слова на английском или на\t"
                                            "любом другом языке или тебе надо выучить термины, определения,\t"
                                            "или ты просто хочешь подготовиться с экзаменам/сессии, то я тот кто тебе нужен!\n"
                                            "Для начала, напиши свое имя: \n"
@@ -33,5 +33,12 @@ def settings_func(message):
                                            "/export - экспорт данных\n"
                                            "/import - импорт карточек\n"
                                            "/reminder - настройка напоминаний")
+
+
+# обработываем команду /add_card
+@bot.message_handler(commands=['add_card'])
+def add_card_func(message):
+    bot.send_message(message.from_user.id, "Давай добавим новую карточку.\n"
+                                           "Сначала введи вопрос:")
 
 
