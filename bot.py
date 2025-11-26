@@ -1,8 +1,32 @@
+import os
 import telebot
+import logging
+from telebot.custom_filters import TextMatchFilter, TextStartsFilter
 
-bot = telebot.TeleBot()
 
 create_database()
+
+# Настройка логирования
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('bot.log', encoding='utf-8'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
+
+# Конфигурация
+class Config:
+    BOT_TOKEN = os.getenv('BOT_TOKEN', 'YOUR_BOT_TOKEN_HERE')
+    ADMIN_IDS = [123456789]  # ID администраторов
+    DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
+
+bot = telebot.TeleBot(Config.BOT_TOKEN)
+
+bot.add_custom_filter(TextMatchFilter())
+bot.add_custom_filter(TextStartsFilter())
 
 # обрабатываем команду /start
 @bot.message_handler(commands=['start'])
