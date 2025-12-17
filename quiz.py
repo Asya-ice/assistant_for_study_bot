@@ -2,7 +2,7 @@ import logging
 import random
 from datetime import datetime, timedelta
 from telebot import types
-from utils.db_utils import with_connection, CardUtils, CategoryUtils, UserUtils, with_connection
+from database import with_connection, CardUtils, CategoryUtils, UserUtils, with_connection
 
 logger = logging.getLogger(__name__)
 

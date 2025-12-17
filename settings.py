@@ -4,7 +4,7 @@ import csv
 import io
 from datetime import datetime
 from telebot import types
-from utils.db_utils import with_connection, UserUtils, CategoryUtils, CardUtils, ReminderUtils, ExportImportUtils
+from database import with_connection, UserUtils, CategoryUtils, CardUtils, ReminderUtils, ExportImportUtils
 
 logger = logging.getLogger(__name__)
 

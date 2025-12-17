@@ -4,7 +4,7 @@ import schedule
 import time
 from datetime import datetime, time as dt_time, timedelta
 from telebot import types
-from utils.db_utils import with_connection, ReminderUtils, CardUtils, UserUtils, with_connection
+from database import with_connection, ReminderUtils, CardUtils, UserUtils, with_connection
 
 logger = logging.getLogger(__name__)
 

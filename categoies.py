@@ -1,7 +1,7 @@
 import logging
 from telebot import types
 from datetime import datetime
-from utils.db_utils import with_connection, CategoryUtils, CardUtils, UserUtils
+from database import with_connection, CategoryUtils, CardUtils, UserUtils
 
 
 logger = logging.getLogger(__name__)

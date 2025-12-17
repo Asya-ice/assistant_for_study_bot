@@ -1,6 +1,6 @@
 import logging
 from telebot import types
-# from utils.db_utils import UserUtils, with_connection
+from database import UserUtils, with_connection
 
 logger = logging.getLogger(__name__)
 
