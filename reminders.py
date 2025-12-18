@@ -10,6 +10,7 @@ logger = logging.getLogger(__name__)
 
 reminder_scheduler = None
 
+user_sessions = {}
 
 # Регистрация всех обработчиков для работы с напоминаниями
 def register_reminders_handlers(bot):

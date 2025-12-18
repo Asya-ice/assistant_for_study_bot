@@ -208,7 +208,7 @@ def register_base_handlers():
 
             markup.add(btn_cards, btn_quiz, btn_add, btn_stats, btn_settings, btn_help)
 
-            bot.send_message(message.chat.id, "📱 *Главное меню*\n\nВыберите действие:",
+            bot.send_message(message.chat.id, "*Главное меню*\n\nВыберите действие:",
                              parse_mode='Markdown', reply_markup=markup)
 
         except Exception as e:
